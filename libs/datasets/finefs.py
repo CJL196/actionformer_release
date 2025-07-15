@@ -9,8 +9,8 @@ from torch.nn import functional as F
 from .datasets import register_dataset
 from .data_utils import truncate_feats
 
-@register_dataset("thumos")
-class THUMOS14Dataset(Dataset):
+@register_dataset("finefs")
+class FineFSDataset(Dataset):
     def __init__(
         self,
         is_training,     # if in training mode
@@ -66,7 +66,7 @@ class THUMOS14Dataset(Dataset):
 
         # dataset specific attributes
         self.db_attributes = {
-            'dataset_name': 'thumos-14',
+            'dataset_name': 'finefs',
             'tiou_thresholds': np.linspace(0.3, 0.7, 5),
             # we will mask out cliff diving
             'empty_label_ids': [],
